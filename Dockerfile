@@ -16,13 +16,10 @@ ENV SONAR_SCANNER_OPTS -Xmx512m
 ENV PATH $PATH:/sonar-scanner-3.0.3.778/bin 
 
 WORKDIR /var/scanner
-
 VOLUME /var/scanner
 
 COPY assets/init.sh /init.sh
-
 RUN chmod 755 /init.sh
-
 ENTRYPOINT ["/init.sh"]
 
 CMD ["app:help"]
