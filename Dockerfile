@@ -4,7 +4,7 @@ MAINTAINER Bruno Cantisano <bruno.cantisano@gmail.com>
 LABEL version latest
 LABEL description Sonar Scanner Raspberry Pi 2 Container
 
-RUN apt-get update \
+RUN apt-get clean && apt-get update \
     && apt-get install -y wget unzip \
     && wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778.zip \
     && unzip sonar-scanner-cli-3.0.3.778.zip \
