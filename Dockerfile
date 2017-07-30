@@ -1,17 +1,22 @@
-FROM paperinik/rpi-java8
+FROM resin/rpi-raspbian
 MAINTAINER Bruno Cantisano <bruno.cantisano@gmail.com>
 
 LABEL version latest
 LABEL description Sonar Scanner Raspberry Pi 2 Container
 
-RUN apt-get clean && apt-get update \
-    && apt-get install -y wget unzip \
+RUN apt-get clean \
+    && apt-get update \
+    && apt-get install -y \
+    wget \
+    unzip \
+    oracle-java8-jdk \
     && wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778.zip \
     && unzip sonar-scanner-cli-3.0.3.778.zip \
     && rm -f sonar-scanner-cli-3.0.3.778.zip \
     && apt-get purge --auto-remove wget unzip \
     && rm -rf /var/lib/apt/lists/*
 
+ENV JAVA_HOME /usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
 ENV SONAR_SCANNER_OPTS -Xmx512m 
 ENV PATH $PATH:/sonar-scanner-3.0.3.778/bin 
 
