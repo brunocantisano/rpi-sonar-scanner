@@ -30,7 +30,7 @@ Environment variables
 
 * Variable name: `SONAR_VERSION`
 * Default value: 3.0.3.778
-* Description: You should change this value is you want to build the container using another version.
+* Description: You should change this value if you want to build the container using another version.
 ----
 
 * Variable name: `SONAR_SCANNER_OPTS`
