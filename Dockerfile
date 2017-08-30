@@ -22,8 +22,8 @@ RUN apt-get clean \
 WORKDIR /var/scanner
 VOLUME /var/scanner
 
-COPY files/entrypoint.sh /entrypoint.sh
-RUN chmod 755 /entryppoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY files/entrypoint.sh /var/scanner/entrypoint.sh
+RUN chmod 755 /var/scanner/entryppoint.sh
+ENTRYPOINT ["/var/scanner/entrypoint.sh"]
 
 CMD ["app:start"]
