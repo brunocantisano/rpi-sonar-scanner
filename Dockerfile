@@ -23,7 +23,7 @@ WORKDIR /var/scanner
 VOLUME /var/scanner
 
 COPY files/entrypoint.sh /var/scanner/entrypoint.sh
-RUN chmod 755 /var/scanner/entryppoint.sh
+RUN chmod 755 /var/scanner/entrypoint.sh
 ENTRYPOINT ["/var/scanner/entrypoint.sh"]
 
 CMD ["app:start"]
