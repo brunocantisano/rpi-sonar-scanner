@@ -49,5 +49,5 @@ Environment variables
 docker run -e SONAR_HOST=192.168.1.30 \
            -e SONAR_PORT=9408 \
            -v /media/usbraid/docker/sonar-scanner/sonarqube-scanner:/var/scanner \
-           -it paperinik/rpi-sonarqube sonar-scanner
+           -it paperinik/rpi-sonar-scanner sonar-scanner
 ```
