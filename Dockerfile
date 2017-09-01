@@ -19,11 +19,11 @@ RUN apt-get clean \
     && apt-get purge --auto-remove wget unzip \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /var/scanner
+WORKDIR /
 VOLUME /var/scanner
 
-COPY files/entrypoint.sh /var/scanner/entrypoint.sh
-RUN chmod 755 /var/scanner/entrypoint.sh
-ENTRYPOINT ["/var/scanner/entrypoint.sh"]
+COPY files/entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["app:start"]
