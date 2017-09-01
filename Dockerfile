@@ -13,6 +13,7 @@ RUN apt-get clean \
     && apt-get install -y \
     wget \
     unzip \
+    && cd / \
     && wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_VERSION.zip \
     && unzip sonar-scanner-cli-$SONAR_VERSION.zip \
     && rm -f sonar-scanner-cli-$SONAR_VERSION.zip \
