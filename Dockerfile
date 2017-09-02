@@ -17,10 +17,11 @@ RUN apt-get clean \
     && wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_VERSION.zip \
     && unzip sonar-scanner-cli-$SONAR_VERSION.zip \
     && rm -f sonar-scanner-cli-$SONAR_VERSION.zip \
+    && mkdir /var/scanner \
     && apt-get purge --auto-remove wget unzip \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /
+WORKDIR /var/scanner
 VOLUME /var/scanner
 
 COPY files/entrypoint.sh /entrypoint.sh
