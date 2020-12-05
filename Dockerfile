@@ -1,10 +1,10 @@
-FROM paperinik/rpi-java8
+FROM balenalib/raspberrypi3-debian-openjdk:11
 MAINTAINER Bruno Cantisano <bruno.cantisano@gmail.com>
 
 LABEL version latest
 LABEL description Sonar Scanner Raspberry Pi Container
 
-ENV SONAR_VERSION 3.0.3.778
+ENV SONAR_VERSION 4.5.0.2216
 ENV SONAR_SCANNER_OPTS -Xmx512m 
 ENV PATH $PATH:/sonar-scanner-$SONAR_VERSION/bin 
 
@@ -14,7 +14,7 @@ RUN apt-get clean \
     wget \
     unzip \
     && cd / \
-    && wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_VERSION.zip \
+    && wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_VERSION.zip \
     && unzip sonar-scanner-cli-$SONAR_VERSION.zip \
     && rm -f sonar-scanner-cli-$SONAR_VERSION.zip \
     && mkdir /var/scanner \
